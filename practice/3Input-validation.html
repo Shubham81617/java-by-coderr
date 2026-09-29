@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Length Validation</title>
+    <style>
+        #h1 {
+            font-size: 14px;
+            font-family: sans-serif;
+            margin-top: 8px;
+        }
+    </style>
+</head>
+<body>
+    <input oninput="handleinput(event)" type="text" placeholder="Enter your name" id="change1">
+    <h1 id="h1"></h1>
+
+    <script>
+        function handleinput(event) {
+            let inputs = event.target.value;
+            let message = document.getElementById("h1");
+
+            // Empty field: clear message
+            if (inputs.length === 0) {
+                message.innerText = "";
+                return;
+            }
+
+            if (inputs.length < 3) {
+                message.innerText = "Min 3 characters are allowed";
+                message.style.color = "red";
+            } else if (inputs.length > 10) {
+                message.innerText = "Max 10 characters are allowed";
+                message.style.color = "red";
+            } else {
+                message.innerText = "Looks good!";
+                message.style.color = "green";
+            }
+        }
+    </script>
+</body>
+</html>

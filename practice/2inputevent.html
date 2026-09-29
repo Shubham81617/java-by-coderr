@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Styling Demo</title>
+</head>
+<body>
+    <input 
+        type="text" 
+        id="change1" 
+        placeholder="Enter your name"
+        onfocus="handleFocus(event)"
+        oninput="handleInput(event)"
+        onblur="handleBlur(event)"
+    ><br><br>
+
+    <button onclick="handleClickEvent(event)">Click for change</button><br><br>
+
+    <span>Change width: </span>
+    <input 
+        id="rangeSlider"
+        type="range" 
+        min="50" 
+        max="400" 
+        value="170"
+        oninput="handleRangeEvent(event)"
+    >
+
+    <script>
+        // Cache elements once
+        const inputField = document.getElementById("change1");
+        const rangeSlider = document.getElementById("rangeSlider");
+
+        function handleFocus(event) {
+            inputField.style.color = "red";
+            inputField.style.backgroundColor = "lightyellow";
+        }
+
+        function handleInput(event) {
+            inputField.style.color = "red";
+            inputField.style.backgroundColor = "yellow";
+        }
+
+        function handleBlur(event) {
+            inputField.style.color = "black";
+            inputField.style.backgroundColor = "white";
+        }
+
+        function handleClickEvent(event) {
+            inputField.style.color = "red";
+            inputField.style.backgroundColor = "beige";
+            inputField.style.width = "400px";
+            // Keep range slider in sync with the new width
+            rangeSlider.value = 400;
+        }
+
+        function handleRangeEvent(event) {
+            let width = event.target.value + "px";
+            inputField.style.color = "black";
+            inputField.style.backgroundColor = "pink";
+            inputField.style.width = width;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <span>YOUR INPUT HERE</span>
+    <h1 id="heading" style="background-color: aqua;"></h1><br><br>
+    <input type="text" placeholder="Enter your name" id="change1" "><br><br>
+    <input type="text" placeholder="Enter your name" id="change2"><br><br>
+    <button onclick="handleGetOnClick(event)">Get Value</button>
+    <button onclick="handleSetClick(event)">Set Value</button>
+    <button onclick="handleDelete(event)">Delete Value</button>
+    <button onclick="handleCopy(event)">Copy Value</button>
+
+    <script>
+        function handleGetOnClick(event) {
+            let value1 = document.getElementById("change1").value;
+            console.log(value1);
+            document.getElementById("heading").innerText = value1;
+        }
+
+        function handleSetClick(event) {
+            let value2 = " Ramesh,is that you";
+            document.getElementById("change1").value = value2;
+        }
+        function handleDelete(event) {
+            document.getElementById("change1").value = "";
+        }
+        function handleCopy(event){
+           let secondinput= document.getElementById("change2").value;
+           document.getElementById("change1").value=secondinput;
+            }
+
+    </script>
+</body>
+
+</html>

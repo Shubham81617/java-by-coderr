@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>INPUT STYLES-SIZE, COLOR</h1>
+    <input type="text" id="change1" placeholder="Enter you name" /><br><br>
+    <button onclick="change2()">click to change</button>
+    <br><br>
+    <input oninput="change3(event)" type="range" max="300" min="50">
+    <script>
+        document.getElementById("change1").style.color ="orange";
+        document.getElementById("change1").style.backgroundColor ="beige";
+        function change2(){
+            document.getElementById("change1").style.color ="red";
+            document.getElementById("change1").style.width ="50%";
+            document.getElementById("change1").style.backgroundColor ="yellow";
+        }
+        function change3(event){
+            console.log(event.target.value);
+            let width= event.target.value+"px";
+            console.log(width);
+            document.getElementById("change1").style.width =width;
+            
+        }
+    </script>
+</html>

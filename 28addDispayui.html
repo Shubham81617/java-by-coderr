@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insert Array Item</title>
+</head>
+<body>
+    <span>Element Position (Index):</span>
+    <input type="number" id="change1" placeholder="Array index (0, 1, ...)"><br><br>
+
+    <span>Element Value:</span>
+    <input type="text" id="change2" placeholder="Value to insert"><br><br>
+
+    <button onclick="updateArray()">Display items</button>
+
+    <ul id="display"></ul>
+
+    <script>
+        
+        let users = ["sam", "ramesh", "peter", "john", "raju"];
+
+        function updateArray() {
+            let position = Number(document.getElementById("change1").value);
+            let value = document.getElementById("change2").value;
+
+            // Insert into array at given position
+            users.splice(position, 0, value);
+
+            // Get display element with quotes
+            let display = document.getElementById("display");
+            display.innerHTML = ""; // Clear existing list
+
+            // Loop through array and append <li> items
+            for (let name of users) {
+                display.innerHTML += `<li>${name}</li>`;
+            }
+        }
+    </script>
+</body>
+</html>

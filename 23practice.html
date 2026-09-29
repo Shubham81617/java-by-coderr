@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Styling Demo</title>
+</head>
+<body>
+    <h1>Input Style - Width, Color, Size</h1>
+
+    <input onfocus="handleFocus(event)" type="text" id="change1" placeholder="Enter your name"><br><br>
+    
+    <button onclick="handleClick(event)" id="change2">Click to change</button><br><br>
+    
+    <label for="change3">Resize Width: </label>
+    <input 
+        oninput="handleRange(event)" 
+        type="range" 
+        id="change3" 
+        min="50" 
+        max="300" 
+        value="150"
+    >
+
+    <script>
+       
+        const targetInput = document.getElementById("change1");
+        targetInput.style.color = "white";
+        targetInput.style.backgroundColor = "pink";
+        targetInput.style.width = "150px";
+
+        function handleFocus(event) {
+            targetInput.style.color = "red";
+            targetInput.style.backgroundColor = "beige";
+        }
+
+        function handleClick(event) {
+            targetInput.style.color = "black";
+            targetInput.style.backgroundColor = "grey";
+            targetInput.style.width = "200px";
+            // Sync slider position if button changed width
+            document.getElementById("change3").value = 200;
+        }
+
+        function handleRange(event) {
+            // Assign the dynamic width to .style.width
+            let width = event.target.value + "px";
+            console.log("Setting width to:", width);
+            targetInput.style.width = width;
+        }
+    </script>
+</body>
+</html>

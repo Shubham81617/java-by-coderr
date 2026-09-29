@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete by Index</title>
+</head>
+<body>
+    <span>Enter index to delete:</span>
+    <input type="number" oninput="handledelete(event)" placeholder="e.g. 0 to 4">
+
+    <script>
+        let user = ["sam", "ramesh", "peter", "john", "raju"];
+        console.log("Initial array:", user);
+
+        function handledelete(event) {
+            let val = event.target.value;
+
+            // 1. Do nothing if the field is empty (user cleared/backspaced)
+            if (val === "") return;
+
+            let index = Number(val);
+
+            // 2. Validate: must be a valid whole number within 0 and array length - 1
+            if (isNaN(index) || index < 0 || index >= user.length) {
+                alert("Invalid index! Enter a number between 0 and " + (user.length - 1));
+            } else {
+                user.splice(index, 1);
+                console.log("Deleted index " + index + ", new array:", user);
+                event.target.value = ""; // Clear input after deleting
+            }
+        }
+    </script>
+</body>
+</html>

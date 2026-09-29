@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Array of users</h1>
+    <ul id="abc"></ul>
+    <script>
+        let users =[
+            {name:"shubhamjjjjjjjjjjjj", age:20,email:"shubh@ad.net"},
+            {name:"bhaadm", age:208,email:"sdgasdgh@ad.net"},
+            {name:"sfrgham", age:250,email:"sfg@adjjj.net"}
+        ]
+       let list= document.getElementById("abc");
+        list.innerHTML="";
+    //    for(let user of users){
+    //     list.innerHTML+= "<li>hello user name is"+user.name+"</li>";
+        
+    //    } 
+    users.map((user)=>{
+        list.innerHTML+= "<li>hello user name is"+user.name+"</li>";
+    })
+       
+    </script>
+</body>
+</html>

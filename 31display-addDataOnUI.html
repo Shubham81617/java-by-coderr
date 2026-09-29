@@ -1,0 +1,96 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" placeholder="Enter key" id="key1">
+    <input type="text" placeholder="Enter Value" id="Value1">
+    <button onclick="handleOnclick(event)">Update Details</button>
+    <ul id="UL"></ul>
+
+    <script>
+        let userdetails = {
+            name: "shubham",
+            age: 20,
+            city: "delhi"
+        }
+        function handleUserdetails() {
+            let user = document.getElementById("UL");
+            user.innerHTML = "";
+            for (let key in userdetails) {
+                user.innerHTML += "<li>" + key + " is " + userdetails[key] + "</li>";
+            }
+        }
+        function handleOnclick(event){
+            let key=document.getElementById("key1").value;
+            let value=document.getElementById("Value1").value;
+            userdetails[key]=value;
+            console.log(userdetails);
+            handleUserdetails();
+        }
+        handleUserdetails();
+    </script>
+</body>
+
+</html> -->   
+
+<!-- better one --> 
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" placeholder="Enter key" id="key1">
+    <input type="text" placeholder="Enter Value" id="value1">
+    <button onclick="handleOnclick(event)">Update Details</button>
+    <ul id="UL"></ul>
+
+    <script>
+        let userdetails = {
+            name: "shubham",
+            age: 20,
+            city: "delhi"
+        };
+
+        function handleUserdetails() {
+            let user = document.getElementById("UL");
+            user.innerHTML = "";
+            for (let key in userdetails) {
+                user.innerHTML += "<li>" + key + " is " + userdetails[key] + "</li>";
+            }
+        }
+
+        function handleOnclick(event) {
+            let key = document.getElementById("key1").value.trim();
+            let value = document.getElementById("value1").value.trim();
+
+            if (!key) {
+                alert("Please enter a key name");
+                return;
+            }
+
+            userdetails[key] = value;
+            console.log(userdetails);
+            handleUserdetails();
+
+            // Clear inputs
+            document.getElementById("key1").value = "";
+            document.getElementById("value1").value = "";
+        }
+
+        handleUserdetails();
+    </script>
+</body>
+
+</html>

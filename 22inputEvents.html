@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Events Demo</title>
+    <script>
+        function handlesharedInput(event) {
+            console.log(event.target.id);
+            console.log(event.target.name);
+            console.log(event.target.value);
+        }
+        function handleBlurInput(event) {
+            console.log("clicked outside (blur)");
+            if(event.target.id="age" && event.target.value<=18){
+                alert("age is not ValidityState")
+            }
+
+        }
+
+        function handleInput() {
+            console.log("input value changed");
+        }
+
+        function handleKeyUp() {
+            console.log("key released (keyup)");
+        }
+
+        function handleKeyDown() {
+            console.log("key pressed down (keydown)");
+        }
+
+        function handleBlur() {
+            console.log("clicked outside (blur)");
+        }
+
+        function handleFocus() {
+            console.log("clicked inside input field (focus)");
+        }
+    </script>
+</head>
+<body>
+    <h1>INPUT EVENTS</h1>
+    <input 
+        type="text"
+        oninput="handleInput()" 
+        onkeyup="handleKeyUp()"
+        onkeydown="handleKeyDown()"
+        onblur="handleBlur()"
+        onfocus="handleFocus()"
+        placeholder="Enter your name"
+    > <br><br>
+
+    <input 
+     type="text" 
+     id="age"
+     name="userAge"
+    oninput="handlesharedInput(event)"
+    onblur="handleBlurInput(event)"
+    placeholder="enter your age">
+    <br><br>
+
+    
+    <input 
+        type="text" 
+        id="email" 
+        name="userEmail"
+        placeholder="Enter Email"
+        oninput="handlesharedInput(event)">
+
+</body>
+</html>

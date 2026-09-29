@@ -1,0 +1,11 @@
+let user={
+    name: "shubham",
+    age:20,
+    email: "shubh@gmail.comm",
+    admin: "Manager"
+}
+// console.log(user)\
+for(let key in user){
+console.log(key)
+console.log("------------")
+console.log(key +" in " + user[key])}

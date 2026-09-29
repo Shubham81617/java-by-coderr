@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <span>Delete array element</span>
+    <input type="number" onblur="deleteArray(event)" placeholder="Enter positon to delete">
+
+    <script>
+        let user = ["sam", "ramesh", "peter", "john", "raju"];
+        console.log(user)
+        function deleteArray(event) {
+            let pos =event.target.value;
+            if(pos>(user.length-1)){
+                alert("postion not valid")
+            }else{
+                user.splice(pos,1);
+                console.log(user)
+            }
+
+        }
+
+    </script>
+</body>
+
+</html>

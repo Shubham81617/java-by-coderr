@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="heading"></h1>
+    <input type="text" id="name" placeholder="Name"><br><br>
+    <input type="text" id="who" placeholder="Enter your Name">
+    <br><br>
+    <button onclick="getInputFieldValue()">"Get Value"</button>
+    <button onclick="setInputFieldValue()">"Set Value"</button>
+    <button onclick="removeInputFieldValue()">"remove Value"</button>
+    <button onclick="copyInputFieldValue()">"Copy Value"</button>
+
+    <script>
+        function getInputFieldValue(){
+            let input = document.getElementById("name").value
+              console.log(input);
+              document.getElementById("heading").innerText =input;
+            }
+        function setInputFieldValue(){
+            let inputValue = "hey hey hupp";
+            document.getElementById("name").value=inputValue;
+        }
+         function removeInputFieldValue(){
+            document.getElementById("name").value= "";
+        }
+        function copyInputFieldValue(){
+            let copyValue = document.getElementById("who").value;
+        document.getElementById("name").value=copyValue;
+        }
+        
+
+        
+    </script>
+</body>
+</html>

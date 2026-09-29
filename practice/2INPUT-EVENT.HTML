@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input onfocus="handlefocus(event)"
+    onclick="handleClick(event)"
+    type="text" placeholder="Enter your name" id="change1"><br><br>
+    <button id="change2" onclick="handleButtonClick(event)">CLICK TO CHANGE</button><br><br>
+    <span> Change width</span>
+    <input oninput="handleRange(event)" type="range" id="range" max="500" min="50" value="170">
+
+    <script>
+        const input1= document.getElementById("change1");
+        const rangeslider= document.getElementById("range");
+        function handlefocus(event){
+            input1.style.backgroundColor="red"
+           input1.style.color="red"
+        }
+        function handleClick(event){
+            
+            input1.style.color="red"
+            input1.style.backgroundColor="black"
+            
+        }
+        function handleButtonClick(event){
+            
+            input1.style.color="red"
+            input1.style.backgroundColor="beige"
+            input1.style.width="400px"
+            rangeslider.value="400"
+            
+        }
+        function handleRange(event){
+            let width= event.target.value+ "px"
+            input1.style.color="black"
+            input1.style.backgroundColor="orange"
+            input1.style.width=width;
+        }
+    </script>
+</body>
+</html>

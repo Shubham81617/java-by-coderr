@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="heading"></h1>
+    <input type="text" id="change1" placeholder="Your input"><br><br>
+    <input type="text" id="change2" placeholder="Your input here"><br><br>
+    <button onclick="inputgetField()">Get Value</button>
+    <button onclick="inputsetField2()">Set Value</button>
+    <button onclick="removeField()">Delete Value</button>
+    <button onclick="copyField()">Copy Value</button>
+  
+
+    <script>
+        function inputgetField(){
+            let input1 = document.getElementById("change1").value;
+            console.log(input1);
+            document.getElementById("heading").innerText=input1
+        }
+        function inputsetField2(){
+            let input2 = "hey hey heyyhey deepu";
+            document.getElementById("change1").value=input2;
+        }
+
+        function removeField(){
+            document.getElementById('change1').value= "";
+        }
+
+        function copyField(){
+           let input1= document.getElementById('change2').value;
+           document.getElementById("change1").value=input1;
+        }
+
+    </script>
+</body>
+</html>

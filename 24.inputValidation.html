@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input onblur="blurinput(event)" type="text" id="change1" placeholder="Enter your name"><br><br>
+    <span id="change2" style="color: red;"></span>
+
+    <script>
+        function blurinput(event) {
+            console.log(event.target.value)
+            let val = event.target.value;
+            let valueChange = document.getElementById("change2");
+            valueChange.style.display="block"
+            if (val.length < 4) {
+                valueChange.textContent = "atleast 4 character requried";
+            } else if (val.length > 10) {
+                valueChange.textContent = "Max 10 character are allowed";
+            }else{
+                valueChange.textContent =""
+                valueChange.style.display="none"
+            }
+        }
+
+    </script>
+</body>
+
+</html>
